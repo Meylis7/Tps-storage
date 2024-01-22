@@ -1,8 +1,10 @@
 import React from "react";
-const Loading = ()=>{
-    return <div className="w-full h-[100vh] flex justify-between items-center">
-            <div> Loading...</div>
-        
+import "./loading.css"
+
+
+const Loading = () => {
+    return <div className="h-[100vh] flex">
+        <div className="loader m-auto"></div>
     </div>
 }
 

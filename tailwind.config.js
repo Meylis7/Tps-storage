@@ -2,10 +2,15 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    ],
-    theme: {
-    extend: {},
+  ],
+  theme: {
+    extend: {
+      boxShadow: {
+        'custom': '0px 4px 16px 0px rgba(0, 0, 0, 0.1)',
+      }
+    },
   },
+
 
   plugins: [],
 }

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 
 import history from "./history";
-import { NotFound, Home, Login, Fileupload } from "../pages/index";
+import { NotFound, Briefs, Login, Fileupload, BriefDetails } from "../pages/index";
 import ScrollIntoView from "./ScrollIntoView";
 import Loading from "../components/loading";
 
@@ -13,46 +13,44 @@ const PrivateRoute = lazy(() => import("./PrivateRoute"));
 const App = () => {
 
   return (
-    <BrowserRouter history={history}>
+    <BrowserRouter  history={history}>
       <ScrollIntoView>
         <Suspense fallback={<Loading />}>
           <Switch>
 
-            <PrivateRoute
-              restricted={false}
-              component={Home}
+            <PrivateRoute 
+              component={Briefs}
               path="/"
-              exact
-            />
-            <PrivateRoute
-              restricted={false}
-              component={Home}
-              path="/"
-              exact
-            />
-            <PrivateRoute
-              restricted={true}
-              component={Login}
-              path="/login"
-              exact
-            />
-            <PrivateRoute
-              restricted={false}
-              component={Fileupload}
-              path="/fileUpload"
               exact
             />
 
-            <PrivateRoute
-              restricted={false}
-              component={NotFound}
-              path="/login"
+            <PrivateRoute 
+              component={Briefs}
+              path="/"
               exact
             />
-            <PrivateRoute
-              restricted={false}
+
+            <PrivateRoute 
+              component={Fileupload}
+              path="/fileUpload/:id"
+              exact
+            />
+
+            <PrivateRoute 
+              component={BriefDetails}
+              path="/briefDetails/:id"
+              exact
+            />
+
+            <Route
               component={NotFound}
               path="/signup"
+              exact
+            />
+
+            <Route
+              component={Login}
+              path="/login"
               exact
             />
             <Route path="*" component={NotFound} />

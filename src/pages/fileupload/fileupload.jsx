@@ -1,91 +1,21 @@
 import React from 'react'
+import FileUpload from '../../components/fileUpload'
 
-const fileupload = () => {
+const FileuploadPage = () => {
+
+    const onFileChange = (files) => {
+        console.log(files);
+    }
+
     return (
-        <section class="file relative block py-[100px]">
-            <div class="auto_container max-w-[1360px] m-auto relative px-[60px]">
-                <div class="file_wrap">
-                    <form action="#" class="file_form max-w-[400px] m-auto border-[1px] border-solid border-[#EBEBEB] rounded-[10px]">
-                        <div class="file_form-inner py-[40px] px-[60px] bg-white">
-                            <div class="file_item border-l-0 border-t-0 border-r-0 border-b border-solid border-[#EBEBEB] pb-5 mb-5">
-                                <div class="file_load flex items-start">
-                                    <span class="file_load-icon block w-6 h-6 mr-[14px]">
-                                        <svg className='block w-full h-full object-contain' width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M16.3624 0.125006L21.4992 5.2681H17.2808C16.7756 5.2681 16.3624 4.85484 16.3624 4.34972L16.3624 0.125006Z"
-                                                fill="#EF9A9A" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M3.10709 0.125H16.3633V4.32417C16.3633 4.84336 16.788 5.2681 17.3072 5.2681H21.5001V18C21.5001 18.3438 21.2188 18.625 20.8751 18.625H3.1071C2.76335 18.625 2.48212 18.3438 2.48212 18V0.750017C2.48212 0.406261 2.76335 0.12503 3.1071 0.12503L3.10709 0.125Z"
-                                                fill="#FFCDD2" />
-                                            <path
-                                                d="M9.35425 11.9821V5.89355C11.112 6.90838 12.8702 7.92252 14.628 8.93738L9.35425 11.9821Z"
-                                                fill="#D32F2F" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M1.27183 15.1592H22.7282C23.0778 15.1592 23.396 15.3035 23.6268 15.5359C23.8571 15.7677 24.0001 16.0865 24.0001 16.4362V22.5979C24.0001 22.9476 23.8571 23.2664 23.6268 23.4982C23.3959 23.7306 23.0778 23.8749 22.7282 23.8749H1.27183C0.922258 23.8749 0.604098 23.7306 0.373211 23.4982C0.142952 23.2664 0 22.9477 0 22.5979V16.4362C0 16.0864 0.14295 15.7677 0.373211 15.5359C0.604061 15.3035 0.92222 15.1592 1.27183 15.1592Z"
-                                                fill="#D32F2F" />
-                                            <path
-                                                d="M4.68951 22.2775V16.685H6.37962L7.39395 20.5002L8.39656 16.685H10.0906V22.2775H9.04239V17.8752L7.93171 22.2775H6.84447L5.7377 17.8752V22.2775H4.68951ZM11.213 22.2775V16.685H13.0241C13.7103 16.685 14.1583 16.7137 14.3666 16.7697C14.6869 16.853 14.9564 17.0353 15.1726 17.3166C15.3887 17.5978 15.4968 17.9611 15.4968 18.4051C15.4968 18.7489 15.4343 19.0379 15.3093 19.271C15.1843 19.5054 15.0268 19.689 14.8341 19.8231C14.6426 19.9559 14.4473 20.0444 14.2494 20.0874C13.9799 20.1408 13.5893 20.1681 13.0775 20.1681H12.3418V22.2775L11.213 22.2775ZM12.3418 17.6317V19.2176H12.959C13.4044 19.2176 13.7025 19.1889 13.8523 19.1304C14.002 19.0718 14.1192 18.9806 14.2051 18.8556C14.2898 18.7306 14.3327 18.5861 14.3327 18.4207C14.3327 18.2176 14.2728 18.0496 14.1531 17.9168C14.0346 17.7853 13.8822 17.702 13.6999 17.6694C13.5645 17.6434 13.2937 17.6317 12.8874 17.6317L12.3418 17.6317ZM16.1492 20.7931L17.1856 20.6681C17.2195 20.9325 17.308 21.1343 17.4538 21.2736C17.5984 21.4142 17.7742 21.4845 17.9799 21.4845C18.2012 21.4845 18.3874 21.3999 18.5385 21.2319C18.6895 21.064 18.765 20.8387 18.765 20.5536C18.765 20.284 18.6934 20.0705 18.5476 19.9129C18.4031 19.7541 18.226 19.6759 18.0176 19.6759C17.8809 19.6759 17.7169 19.702 17.5255 19.7554L17.6439 18.883C17.9343 18.8895 18.1557 18.827 18.308 18.6942C18.4604 18.5601 18.5372 18.383 18.5372 18.1616C18.5372 17.9728 18.4812 17.8231 18.3692 17.7111C18.2572 17.5991 18.1075 17.5431 17.9226 17.5431C17.739 17.5431 17.5827 17.6069 17.4538 17.7345C17.3236 17.8608 17.2442 18.047 17.2169 18.2905L16.2286 18.1239C16.2976 17.7853 16.4005 17.5145 16.5398 17.3127C16.6778 17.1108 16.8718 16.952 17.1192 16.8361C17.3679 16.7202 17.6452 16.6616 17.9525 16.6616C18.4799 16.6616 18.9018 16.8296 19.2195 17.1655C19.4812 17.4403 19.6127 17.7502 19.6127 18.0965C19.6127 18.5874 19.3445 18.9793 18.808 19.271C19.1283 19.34 19.3835 19.4936 19.5762 19.7332C19.7676 19.9715 19.864 20.2606 19.864 20.5991C19.864 21.09 19.6843 21.508 19.3262 21.8543C18.9682 22.1994 18.5216 22.3726 17.9877 22.3726C17.4812 22.3726 17.0619 22.2267 16.7286 21.9364C16.3953 21.6447 16.2025 21.2645 16.1492 20.7931Z"
-                                                fill="white" />
-                                        </svg>
-                                    </span>
-
-                                    <div class="file_load-group ">
-                                        <div class="file_load-row flex items-start justify-between">
-                                            <h6 class="file_load-name text-[16px] font-normal leading-[1.3] mr-[15px]">
-                                                Мой документ.mp3
-                                            </h6>
-
-                                            <p class="file_load-size text-[16px] font-normal leading-[1.3] mr-[15px] text-[#808080]">
-                                                123KB
-                                            </p>
-                                        </div>
-
-                                        <span class="file_load-progress block w-full h-1 bg-[#EBEBEB] rounded-[2px] mt-[5px]"></span>
-                                    </div>
-                                </div>
-
-                                <div class="file_select mt-[10px] ml-[30px] block">
-                                    <select>
-                                        <option value="0">Выберите дизайнера</option>
-                                        <option value="1">Билл Гейтс</option>
-                                        <option value="2">Билл Гейтс</option>
-                                        <option value="3">Билл Гейтс</option>
-                                    </select>
-
-                                    <span class="file_select-alert block text-[14px] font-normal leading-[1.3] text-[#EB2F2F] mt-[16px] mb-[24px]">
-                                        !  Выберете дизайнера
-                                    </span>
-
-                                    <button class="file_select-btn text-[16px] font-normal leading-[1.3] block cursor-pointer bg-transparent">
-                                        Подтвердить
-                                    </button>
-                                </div>
-                            </div>
-
-                            <button class="addMore mt-[10px] ml-[30px] bg-transparent cursor-pointer flex items-center text-[14px] font-normal leading-[1.3]">
-                                <span className='block w-[14px] h-[14px] mr-[10px]'>
-                                    <svg className='block w-full h-full object-contain' width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M13 7.99805H8V12.998C8 13.2633 7.89464 13.5176 7.70711 13.7052C7.51957 13.8927 7.26522 13.998 7 13.998C6.73478 13.998 6.48043 13.8927 6.29289 13.7052C6.10536 13.5176 6 13.2633 6 12.998V7.99805H1C0.734784 7.99805 0.48043 7.89269 0.292893 7.70515C0.105357 7.51762 0 7.26326 0 6.99805C0 6.73283 0.105357 6.47848 0.292893 6.29094C0.48043 6.1034 0.734784 5.99805 1 5.99805H6V0.998047C6 0.73283 6.10536 0.478476 6.29289 0.29094C6.48043 0.103403 6.73478 -0.00195313 7 -0.00195312C7.26522 -0.00195313 7.51957 0.103403 7.70711 0.29094C7.89464 0.478476 8 0.73283 8 0.998047V5.99805H13C13.2652 5.99805 13.5196 6.1034 13.7071 6.29094C13.8946 6.47848 14 6.73283 14 6.99805C14 7.26326 13.8946 7.51762 13.7071 7.70515C13.5196 7.89269 13.2652 7.99805 13 7.99805Z"
-                                            fill="black" />
-                                    </svg>
-                                </span>
-
-                                Добавить файл
-                            </button>
-                        </div>
-
-
-                        <button class="file_btn text-[18px] font-normal leading-[1.3] text-center w-full py-5 px-[10px] cursor-pointer bg-[#F5F5F5]">
-                            Готово
-                        </button>
-                    </form>
+        <section className="file relative block py-[100px]">
+            <div className="auto_container max-w-[1360px] m-auto relative px-[60px]">
+                <div className="file_wrap">
+                    <FileUpload onFileChange={(files) => onFileChange(files)} />
                 </div>
             </div>
         </section>
     )
 }
 
-export default fileupload
+export default FileuploadPage

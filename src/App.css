@@ -133,3 +133,9 @@ li {
 ::-webkit-scrollbar-thumb:hover {
   background: #DFDFDF;
 }
+
+
+/* Table ================= */
+.MuiDataGrid-row:nth-child(even) {
+  background: #FAFAFA;
+}

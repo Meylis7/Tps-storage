@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Route } from "react-router-dom";
-import { NotFound } from "../pages";
+import { Login, NotFound } from "../pages";
 import { isLogin } from "../utils";
 import Loading from "../components/loading";
 
@@ -13,20 +13,15 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         <Route
             {...rest}
             render={(props) =>
-                isLogin() || true ? (
+                isLogin() ? (
                     <div>
                         <Suspense fallback={<Loading />}>
                             <Header />
                         </Suspense>
-                        <div className="h-[95vh] w-[90%] max-w-[1360px] mx-auto my-10 ">
-
-                            <Component {...props} />
-
-                        </div>
+                        <Component {...props} />
                     </div>
                 ) : (
-                    <Route component={NotFound} />
-
+                    <Route component={Login} />
                 )
             }
         />

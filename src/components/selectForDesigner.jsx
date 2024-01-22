@@ -3,8 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 const Select = (props) => {
 
     const [open, setOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(props?.value);
-
+    const [selectedOption, setSelectedOption] = useState(props?.value ? props?.value : { FirstName: "Choose", LastName: "Designer!" });
     function useOutsideAlerter(ref) {
         useEffect(() => {
             function handleClickOutside(event) {
@@ -19,19 +18,18 @@ const Select = (props) => {
         }, [ref]);
     }
 
-    console.log(props?.options)
     useEffect(() => {
-        props?.onChange(selectedOption)
+        props?.onChange(selectedOption, props?.indexOfFile)
 
     }, [selectedOption])
 
     const openRef = useRef(null);
     useOutsideAlerter(openRef);
 
-    return <div ref={openRef} className="select-none relative min-w-[190px] max-w-[190px] ">
-        <div onClick={() => setOpen(!open)} className="rounded-[5px] flex justify-between gap-4 items-center py-[10px] px-[15px] border-[1px] border-solid border-[#EBEBEB] cursor-pointer">
-            <p className="max-w-[190px] LineText">
-                {props?.value ? props?.options?.map((item) => { if (props?.value == item?.Oid) { return item?.Name } }) : props?.defOpt}
+    return <div ref={openRef} className="select-none relative">
+        <div onClick={() => props?.isDone ? setOpen(false) : setOpen(!open)} className="rounded-[5px] flex justify-between gap-4 items-center py-[10px] px-[15px] border-[1px] border-solid border-[#EBEBEB] cursor-pointer">
+            <p className="LineText mr-[5px]">
+                {props?.value ? (props?.value?.FirstName + " " + props?.value?.LastName) : (selectedOption.FirstName + " " + selectedOption.LastName)}
             </p>
 
             <span className={`${(open ? "-rotate-180" : "") + " transition"} `}>
@@ -40,10 +38,10 @@ const Select = (props) => {
                 </svg>
             </span>
         </div>
-        {open && <div className="absolute left-0 top-[100%] bg-white shadow-custom z-[2] border-[1px] border-solid border-[#EBEBEB] w-full overflow-y-auto max-h-72 text-pretty overflow-x-hidden">
+        {open && <div className="absolute left-0 top-[100%] bg-white shadow-custom z-[2] border-[1px] border-solid border-[#EBEBEB] w-full overflow-y-auto max-h-72">
             {
                 props?.options?.map((item, i) => {
-                    return <div className="py-[10px] px-[15px] w-full cursor-pointer hover:bg-[#EBEBEB]" key={"option" + i} onClick={() => { setSelectedOption(item); setOpen(false) }}>{item?.Name}</div>
+                    return <div className="py-[10px] px-[15px] w-full cursor-pointer hover:bg-[#EBEBEB]" key={"option" + i} onClick={() => { setSelectedOption(item); setOpen(false) }}>{item?.FirstName + " " + item?.LastName}</div>
                 })
             }
         </div>}
@@ -51,4 +49,4 @@ const Select = (props) => {
     </div>
 }
 
-export default React.memo(Select)
+export default Select

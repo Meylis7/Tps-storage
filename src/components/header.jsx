@@ -1,20 +1,27 @@
 import React from "react";
 import logo from "../images/logo.png"
+import { useHistory, Link } from 'react-router-dom'
+
+
 
 
 const Header = () => {
+    const history = useHistory();
+
+    const userData = JSON.parse(localStorage.getItem("profile"))
+
     return <header className="header w-full py-5 bg-white">
         <div className="auto_container max-w-[1360px] m-auto relative px-[60px]">
             <div className="header_wrap flex items-center justify-between">
                 <div className="header_group flex items-center ">
-                    <a href="index.html" className="logo w-[160px] mr-[80px] block">
+                    <Link to="/" className="logo w-[160px] mr-[80px] block cursor-pointer">
                         <img src={logo} alt="logo" className='block w-full h-full object-contain' />
-                    </a>
+                    </Link>
 
                     <nav className="nav">
                         <ul className="flex items-center">
                             <li className="mr-[30px] block">
-                                <a href="#" className="text-[14px] font-normal leadeing-[1.3] block">Брифы</a>
+                                <Link to="/" className="text-[14px] font-normal leadeing-[1.3] block cursor-pointer">Брифы</Link>
                             </li>
                             <li>
                                 <a href="#">Файлы</a>
@@ -34,8 +41,8 @@ const Header = () => {
                             </svg>
                         </div>
 
-                        <h6 className="user_title text-[14px] font-normal leading-[1.3] relative cursor-pointer mr-[15px] ">
-                            Майк Эрмантраут
+                        <h6 className="user_title text-[14px] font-normal leading-[1.3] relative mr-[15px] capitalize">
+                            {userData?.username}
                         </h6>
                     </div>
                 </div>

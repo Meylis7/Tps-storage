@@ -1,0 +1,127 @@
+{
+    "data": [
+        {
+            "Oid": "1430167c-1dd0-4bce-ac07-cbddc9cc81a8",
+            "Code": "TM-23-003",
+            "Description": "awd",
+            "OpenedAt": "2023-12-20 15:21:41.848470",
+            "DeadLine": "2023-12-21 00:00:00.000000",
+            "Employee": {
+                "Oid": "8b756a26-f3f8-4e28-b8bb-6fa56492785a",
+                "FirstName": "Test",
+                "LastName": "Menejer"
+            },
+            "Customer": {
+                "Oid": "4adf6310-de36-4d90-97d6-d929635642ce",
+                "Name": null
+            },
+            "Brand": null,
+            "Responsible": null
+        },
+        {
+            "Oid": "23b12329-b79a-4a0f-99ce-923407a8a8ad",
+            "Code": "\u0411\/\u0423: \u041c\u0410-23-003",
+            "Description": "\u0414\u043d\u0438 \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u044b \u0410\u0448\u0433\u0430\u0431\u0430\u0442 + \u041c\u0430\u0440\u044b \r\n\u0412\u0438\u0434\u0435\u043e \r\n\u0427\u0413\u041a\r\n\r\n\u042d\u0442\u043e \u0431\u0440\u0438\u0444 \u041c\u0410-23-030 \u0432 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0435\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435",
+            "OpenedAt": "2023-12-20 10:40:51.514378",
+            "DeadLine": "2023-12-31 00:00:00.000000",
+            "Employee": {
+                "Oid": "98062bde-2c19-4093-80ec-d96c9bcf985d",
+                "FirstName": "\u041c\u0430\u0440\u0442\u0438\u0440\u043e\u0441\u044f\u043d",
+                "LastName": "\u0410\u0448\u043e\u0442"
+            },
+            "Customer": {
+                "Oid": "6ba50935-0165-4ba4-aff7-2fe2c56c262b",
+                "Name": "\u0415\u0432\u0440\u043e\u043f\u0435\u0439\u0441\u043a\u0438\u0439 \u0441\u043e\u044e\u0437"
+            },
+            "Brand": null,
+            "Responsible": null
+        }
+    ],
+    "links": {
+        "first": "http:\/\/216.250.8.93:8092\/api\/briefs?page=1",
+        "last": "http:\/\/216.250.8.93:8092\/api\/briefs?page=12",
+        "prev": null,
+        "next": "http:\/\/216.250.8.93:8092\/api\/briefs?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 12,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=3",
+                "label": "3",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=4",
+                "label": "4",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=5",
+                "label": "5",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=6",
+                "label": "6",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=7",
+                "label": "7",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=8",
+                "label": "8",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=9",
+                "label": "9",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=10",
+                "label": "10",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=11",
+                "label": "11",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=12",
+                "label": "12",
+                "active": false
+            },
+            {
+                "url": "http:\/\/216.250.8.93:8092\/api\/briefs?page=2",
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http:\/\/216.250.8.93:8092\/api\/briefs",
+        "per_page": 2,
+        "to": 2,
+        "total": 23
+    }
+}

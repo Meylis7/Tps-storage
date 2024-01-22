@@ -16,8 +16,7 @@ export const isLogin = () => {
 
 export const token = () => {
     if (JSON.parse(localStorage.getItem("profile"))) {
-      var data = JSON.parse(localStorage.getItem("profile"));
-      return data.token;
+        var data = JSON.parse(localStorage.getItem("profile"));
+        return data.token;
     }
-  };
-  
+};

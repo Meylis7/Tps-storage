@@ -15,10 +15,8 @@ const PublicRoute = ({ component: Component, ...rest }) => {
                     <Suspense fallback={<Loading />}>
                         <Header />
                     </Suspense>
-                    <div className="w-full min-h-[95vh]">
-                        <Component {...props} />
-                    </div>
-
+                    
+                    <Component {...props} />
                 </div>
             )
             }
