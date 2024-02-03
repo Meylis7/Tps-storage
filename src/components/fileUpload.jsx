@@ -165,7 +165,7 @@ const FileUpload = () => {
     await Promise.all(
       fileList?.map(async (item) => {
         let formData = new FormData();
-        formData.append('brief', item.brief);
+        formData.append('brief', item.file);
         formData.append('designer', item.designer?.Oid);
         formData.append('file', item.file, item.file?.name);
 
